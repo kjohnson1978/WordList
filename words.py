@@ -15,10 +15,10 @@ for c in range(columns):
     words.append(str(data[0,c]))
 for r in range(1,rows-1):
     words.append(str(data[r,-1]))
-for c in range(1,columns):
-    words.append(str(data[-1,-c]))
-for r in range(1,rows-1):
-    words.append(str(data[r,-1]))
+for c in range(columns-1,-1,-1):
+    words.append(str(data[-1,c]))
+for r in range(rows-2,0,-1):
+    words.append(str(data[r,0]))
 print(str(data[r,c])) #check that you collected all the letters in your data file
 print(words)
 
