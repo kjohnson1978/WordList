@@ -11,12 +11,18 @@ data = np.loadtxt("loop4.csv", delimiter=",", dtype=str, encoding = 'utf8')
 words = [] #this will store the letters we extract from the data file
 rows, columns = data.shape  #this gives you the number of rows and number of columns in the data file
 #collect all letters - fill in your code here
-for c in range(n_columns):
-    words.append(data[
-
-    
-print(words) #check that you collected all the letters in your data file
+for c in range(columns):
+    words.append(str(data[0,c]))
+for r in range(1,rows-1):
+    words.append(str(data[r,-1]))
+for c in range(1,columns):
+    words.append(str(data[-1,-c]))
+for r in range(1,rows-1):
+    words.append(str(data[r,-1]))
+print(str(data[r,c])) #check that you collected all the letters in your data file
+print(words)
 
 assert len(words) == num_letters(rows, columns) 
 
   #this should not throw an error. If it does, most likely your main code is not getting the correct number of letters
+print(rows, columns)
